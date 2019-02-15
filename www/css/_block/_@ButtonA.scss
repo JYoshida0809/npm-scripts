@@ -1,0 +1,26 @@
+.\@ButtonA{
+  border: 1px solid #BC1601;
+  color: #BC1601;
+  display: block;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  @include text-crop;
+
+  @include mq-pc{
+    border-radius: 10px;
+    padding: 21px 10px;
+    transition-duration: $base-duration;
+    @include fontsize(14);
+
+    &:hover{
+      background-color: #BC1601;
+      color: #fff;
+    }
+  }
+
+  @include mq-sp{
+    padding: vw(21) vw(10);
+    border-radius: vw(10);
+  }
+}

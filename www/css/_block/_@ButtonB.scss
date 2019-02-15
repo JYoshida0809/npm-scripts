@@ -1,0 +1,87 @@
+.\@ButtonB{
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  display: inline-block;
+  position: relative;
+
+  &:before{
+    content: '';
+    display: block;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(45deg);
+    transform-origin: center center;
+    transition-duration: $base-duration;
+
+    @include mq-pc{
+      right: 20px;
+      width: 9px;
+      height: 9px;
+    }
+
+    @include mq-sp{
+      right: vw(15);
+      width: vw(6);
+      height: vw(6);
+    }
+  }
+
+  @include mq-pc{
+    border-radius: 24px;
+    padding: 18px 48px 18px 20px;
+    transition-duration: $base-duration;
+    @include fontsize(16);
+
+    &:hover{
+      background-color: #000;
+      color: #fff;
+
+      &:before{
+        border-color: #fff;
+      }
+    }
+  }
+
+  @include mq-sp{
+    border-radius: vw(20);
+    padding: vw(12) vw(32) vw(12) vw(17);
+    font-size: vw(12);
+  }
+
+  &.-fontsizeS{
+    @include mq-pc{
+      @include fontsize(14);
+    }
+  }
+
+  &.-reversal{
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+
+    &:before{
+      border-color: #fff;
+    }
+
+    @include mq-pc{
+      &:hover{
+        background-color: #fff;
+        color: #000;
+
+        &:before{
+          border-color: #000;
+        }
+      }
+    }
+  }
+}
+
+
+.\@ButtonB__adjust{
+  @include text-crop;
+}

@@ -1,0 +1,95 @@
+.IconSvg {
+  circle,
+  ellipse,
+  line,
+  path,
+  rect {
+    transition: $base-duration stroke;
+
+    .-current & {
+      stroke: $color-key;
+    }
+
+    a:hover & {
+      @include mq-pc {
+        stroke: $color-key;
+      }
+    }
+  }
+
+  tspan {
+    transition: $base-duration fill;
+
+    .-current & {
+      fill: $color-key;
+    }
+
+    a:hover & {
+      @include mq-pc {
+        fill: $color-key;
+      }
+    }
+  }
+
+  .fill-target {
+    .-current & {
+      stroke: transparent !important;
+      fill: $color-key;
+    }
+
+    a:hover & {
+      @include mq-pc {
+        fill: $color-key;
+        stroke: transparent !important;
+      }
+    }
+  }
+
+  rect.box {
+    stroke: transparent !important;
+  }
+
+  &.-reversal {
+    circle,
+    ellipse,
+    line,
+    path,
+    rect {
+      .-current & {
+        stroke: #fff;
+      }
+
+      a:hover & {
+        @include mq-pc {
+          stroke: #fff;
+        }
+      }
+    }
+
+    tspan {
+      transition: #fff fill;
+
+      .-current & {
+        fill: #fff;
+      }
+
+      a:hover & {
+        @include mq-pc {
+          fill: #fff;
+        }
+      }
+    }
+
+    .fill-target {
+      .-current & {
+        fill: #fff;
+      }
+
+      a:hover & {
+        @include mq-pc {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}

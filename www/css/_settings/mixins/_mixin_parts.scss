@@ -1,0 +1,124 @@
+@mixin box-col($col, $mgr, $mgt, $mbsp) {
+  @include mq-pc {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-right: $mgr * ($col - 1) + px;
+    > * {
+      margin: #{$mgt}px #{$mgr}px 0 0;
+      width: 100% / $col;
+      &:nth-child(#{$col}n){ margin-right: -$mgr * ($col - 1) + px; }
+      &:nth-child(-n+#{$col}) { margin-top: 0; }
+    }
+  }
+  @include mq-sp {
+    > * + * { margin-top: vw($mbsp); }
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+@mixin contents {
+  margin: 0 auto;
+  max-width: $contents-max-width + px;
+}
+
+@mixin fontsize($fontsize) {
+  font-size: $fontsize + px;
+  font-size: ($fontsize / 10) + rem;
+}
+
+@mixin font-smoothing{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin inblock-parent {
+  letter-spacing: -.40em;
+}
+
+@mixin inblock {
+  display: inline-block;
+  letter-spacing: normal;
+  vertical-align: middle;
+}
+
+@mixin icomoon($content) {
+  content: unquote("\"") + unquote(str-insert($content, "\\", 1)) + unquote("\"");
+}
+
+@mixin use-icomoon {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color $base-duration ease;
+}
+
+@mixin font-r {
+  font-family: $base-font-family;
+  font-weight: 400;
+}
+
+@mixin font-rm {
+  font-family: $base-font-family;
+  font-weight: 500;
+}
+
+@mixin font-b {
+  font-family: $base-font-family;
+  font-weight: 700;
+}
+
+@mixin font-bl {
+  font-family: $base-font-family;
+  font-weight: 900;
+}
+
+
+@mixin text-crop($line-height: 1.6, $top-adjustment: 0px, $bottom-adjustment: 0px) {
+  $top-crop: 14;
+  $bottom-crop: 13;
+  $crop-font-size: 31;
+  $crop-line-height: 1.6;
+
+  $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+  $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+
+  // Mixin output
+  line-height: $line-height;
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+  }
+
+  &::before {
+    margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
+  }
+
+  &::after {
+    margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
+  }
+}

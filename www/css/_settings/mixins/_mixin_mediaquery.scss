@@ -1,0 +1,23 @@
+@mixin mq-pc {
+  @media screen and (min-width: $break-small + 1), print {
+    @content;
+  }
+}
+
+@mixin mq-sp {
+  @media screen and (max-width: $break-small) {
+    @content;
+  }
+}
+
+@mixin mq-pc-lqd {
+  @media screen and (min-width: $body-min-width + 1 + px) and (max-width: $body-max-width + px), print {
+    @content;
+  }
+}
+
+@mixin mq-pc-fix {
+  @media screen and (min-width: $break-small + 1) and (max-width: $body-min-width + px), print {
+    @content;
+  }
+}

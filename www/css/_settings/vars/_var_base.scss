@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+// アニメーション時間
+$base-duration: .2s;
+
+// フォントファミリー
+$base-font-family: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+
+// フォントサイズ
+$base-font-size: 16;
+$base-font-size-sp: 14;
+
+// 行間
+$base-line-height: 1.6;
+$base-line-height-sp: 1.45;
+
+// ブレークポイント
+$break-small: 767px;
+
+// コンテンツエリアの外側の左右余白（PCレイアウト）
+$pc-pdg: 10;
+
+// コンテンツエリアの内側の左右余白（SPレイアウト）
+$sp-pdg: 21;
+
+// コンテンツエリアの幅（PCレイアウト）
+$contents-width: 1078; // 最小幅
+$contents-max-width: 1350; // 最大幅
+$contents-min-width: 988; // 最小幅
+
+// bodyの最大幅（PCレイアウト）
+$body-max-width: $contents-max-width + ($pc-pdg * 2);
+
+// bodyの最小幅（PCレイアウト）
+$body-min-width: $contents-min-width + ($pc-pdg * 2);
+
+// headerの高さ
+$header-height: 80;
+$header-height-sp: 60;
+
+// vwの基準となるサイズ（px）
+$pc-basis: 1366;
+$sp-basis: 375;
