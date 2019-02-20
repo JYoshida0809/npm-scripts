@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/lib */ \"./www/js/module/lib.js\");\n\nconsole.log(Object(_module_lib__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(180));\n\n//# sourceURL=webpack:///./www/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/lib */ \"./www/js/module/lib.js\");\n\nconsole.log(Object(_module_lib__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(200));\n\n//# sourceURL=webpack:///./www/js/main.js?");
 
 /***/ }),
 

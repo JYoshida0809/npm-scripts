@@ -1,17 +1,17 @@
 {
   "name": "npm-script",
   "version": "1.0.0",
-  "description": "postcss,webpack",
-  "author": "J.Y.",
+  "description": "sass,webpack",
+  "author": "J.Yoshida",
   "license": "MIT",
   "scripts": {
-    "serve": "browser-sync start --open=\"external\" --files \"**/*\" --proxy http://npm-script.example.test/ --logLevel silent",
-    "scss": "node-sass www/css/style.scss www/css/style.css --importer node_modules/node-sass-globbing/index.js --output-style compressed",
-    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers '> 5%, ie 11' -r www/css/style.css --no-map",
-    "build:css": "npm run scss && npm run autoprefixer",
-    "watch:css": "nodemon -e scss -x \"npm run build:css\"",
-    "build:js": "webpack www/js/main.js",
-    "start": "concurrently --kill-others \"npm run serve\" \"npm run watch:css\" \"npm run build:js\""
+    "serve": "browser-sync start --proxy http://npm-script.example.test/ --open=\"external\" --files \"**/*\" --logLevel silent",
+    "postcss": "postcss -u autoprefixer --autoprefixer.browsers '> 3%, ie 11' -r www/css/style.css --no-map",
+    "sass": "node-sass www/css/style.scss www/css/style.css --importer node_modules/node-sass-globbing/index.js --output-style compressed",
+    "build:css": "npm run sass && npm run postcss",
+    "watch:css": "nodemon -e sass -x \"npm run build:css\"",
+    "webpack": "webpack www/js/main.js",
+    "start": "concurrently --kill-others \"npm run serve\" \"npm run watch:css\" \"npm run webpack\""
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",

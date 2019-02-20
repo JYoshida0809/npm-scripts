@@ -1,2 +1,2 @@
 import cube from './module/lib';
-console.log(cube(180));
+console.log(cube(200));

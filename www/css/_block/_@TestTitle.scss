@@ -1,5 +1,4 @@
 .\@TestTitle{
-  color: red;
-  font-weight: bold;
-  @include fontsize(24);
+  color: blue;
+  @include fontsize(16);
 }
