@@ -1,0 +1,18 @@
+.MainContents{
+  @include mq-pc{
+  }
+
+  @include mq-sp{
+  }
+}
+
+.MainContents__inner{
+  @include mq-pc{
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  @include mq-sp{
+    padding: 0 vw(15);
+  }
+}

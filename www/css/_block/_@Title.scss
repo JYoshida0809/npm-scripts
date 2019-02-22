@@ -15,17 +15,13 @@
       margin-top: vw(21);
     }
   }
-
-  &.-reversal{
-    color: red;
-  }
 }
 
 .\@Title__english{
   font-weight: 400;
 
   @include mq-pc{
-    @include fontsize(34);
+    @include fontsize(13);
 
     + *{
       margin-top: 13px;
@@ -42,10 +38,9 @@
 }
 
 .\@Title__japanese{
-  font-weight: 300;
 
   @include mq-pc{
-    @include fontsize(16);
+    @include fontsize(24);
   }
 
   @include mq-sp{
